@@ -15,7 +15,7 @@ A spigot based plugin dedicated to fixing glitches and exploits that have made i
 ## EgirlsNation links
 - [Website](https://egirlsnation.com/)
 - [Discord](https://discord.egirlsnation.com/)
-- [IP](play.egirlsnation.com)
+IP - play.egirlsnation.com
 
 ## Original IllegalStack links
 
