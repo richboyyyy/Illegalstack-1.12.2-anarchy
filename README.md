@@ -3,7 +3,7 @@ A spigot based plugin dedicated to fixing glitches and exploits that have made i
 
 
 ## How to?
-1. Grab the precompiled plugin in the releases tab or build it yourself.
+1. Grab the precompiled plugin in the releases tab or build it yourself (alternativelly you can download development builds from the actions tab).
 2. Install it on your server.
 3. Enable "DisableChestsOnMobs".
 4. Put chest on donkey while canceling PlayerInteractEntityC2S packet (MountBypass module).
@@ -15,6 +15,7 @@ A spigot based plugin dedicated to fixing glitches and exploits that have made i
 ## EgirlsNation links
 - [Website](https://egirlsnation.com/)
 - [Discord](https://discord.egirlsnation.com/)
+- [Dev Builds](https://github.com/Lerbiq/IllegalStack/actions)
 - IP - play.egirlsnation.com
 
 ## Original IllegalStack links
@@ -26,5 +27,7 @@ A spigot based plugin dedicated to fixing glitches and exploits that have made i
 
 ## Building this project
 
-Gradle is the recommended way to build the project. Use `./gradlew build` in the main project directory to build the project.
+Gradle is the recommended way to build the project. Hovewer keep in mind you will need to get spigot jar and JetMinions jars.
+Once you get twose jars drop them into the libs folder.
+Use `./gradlew build` in the main project directory to build the project.
 The output is located at `/build/libs/IllegalStack.jar`.
