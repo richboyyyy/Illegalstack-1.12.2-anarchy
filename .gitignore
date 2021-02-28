@@ -13,3 +13,5 @@ build/
 *.class
 .project
 /bin
+/libs/JetsMinions.jar
+/libs/spigot-*.jar
