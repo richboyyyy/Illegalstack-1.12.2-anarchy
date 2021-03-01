@@ -1,7 +1,7 @@
 # IllegalStack - EgirlsNation edition
 A spigot based plugin dedicated to fixing glitches and exploits that have made it into final Minecraft... But not quite.
 
-###Disclaimer for my players
+### Disclaimer for my players
 **This isn't the plugin with which I patch illegal items!**
 
 
