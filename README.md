@@ -15,6 +15,11 @@ A spigot based plugin dedicated to fixing glitches and exploits that have made i
 7. Profit?
 8. Spice things up and name the donkey "popbob sex".
 
+### The recipes follow this patter:
+You can use any plank type, cobblestone, iron, gold, diamonds and if you are running 1.16.x version netherite too
+![grappling_hook](https://user-images.githubusercontent.com/57460117/109688872-0df5a000-7b85-11eb-8832-d781dbd42e06.png)
+
+
 ## EgirlsNation links
 - [Website](https://egirlsnation.com/)
 - [Discord](https://discord.egirlsnation.com/)
