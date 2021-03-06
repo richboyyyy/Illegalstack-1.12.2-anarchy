@@ -66,49 +66,6 @@ public class pLisbListener {
                         		event.setCancelled(true);
                         		return;
                         	}
-                        	
-                            if (IllegalStack.hasChestedAnimals()) {
-                                try {
-                                    Entity entity = event.getPacket().getEntityModifier(event.getPlayer().getWorld()).read(0);
-                                    if (entity instanceof ChestedHorse && ((ChestedHorse) entity).isTamed()) {
-                                        ItemStack is = event.getPlayer().getInventory().getItemInMainHand();
-                                        if (is == null || is.getType() != Material.CHEST)
-                                            is = event.getPlayer().getInventory().getItemInOffHand();
-                                        if (is == null || is.getType() != Material.CHEST)
-                                            return;
-                                        exploitMessage(event.getPlayer(), entity);
-                                        event.setCancelled(true);
-//                                        event.setPacket(new PacketContainer(Packet));
-                                        ((ChestedHorse) entity).setCarryingChest(true);
-                                        ((ChestedHorse) entity).setCarryingChest(false);
-                                        fTimer.getPunish().put(event.getPlayer(), entity);
-                                    }
-                                } catch (IndexOutOfBoundsException ex) {
-                                    System.out.println("[IllegalStack] - an error receiving a USE_ENTITY packet has occured, ");
-                                    ex.printStackTrace();
-                                }
-                            } else {
-                                try {
-                                    Entity entity = event.getPacket().getEntityModifier(event.getPlayer().getWorld()).read(0);
-                                    if (entity instanceof Horse && ((Horse) entity).isTamed()) {
-                                        ItemStack is = event.getPlayer().getInventory().getItemInHand();
-                                        if (!fListener.getInstance().is18() && (is == null || is.getType() != Material.CHEST))
-                                            is = event.getPlayer().getInventory().getItemInOffHand();
-                                        if (is == null || is.getType() != Material.CHEST)
-                                            return;
-                                        exploitMessage(event.getPlayer(), entity);
-                                        event.setCancelled(true);
-                                        //event.setPacket(new PacketContainer(0));
-                                        //	((Horse) entity).setCarryingChest(true);
-                                        //((Horse) entity).setCarryingChest(false);
-                                        fTimer.getPunish().put(event.getPlayer(), entity);
-                                    }
-                                } catch (IndexOutOfBoundsException ex) {
-                                    System.out.println("[IllegalStack] - an error receiving a USE_ENTITY packet has occurred, ");
-                                    ex.printStackTrace();
-                                }
-                            }
-
                         }
                     });
         }
