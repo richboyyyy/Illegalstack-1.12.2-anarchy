@@ -1,6 +1,9 @@
 # IllegalStack - EgirlsNation edition
 A spigot based plugin dedicated to fixing glitches and exploits that have made it into final Minecraft... But not quite.
 
+### Disclaimer for my players
+**This isn't the plugin with which I patch illegal items!**
+
 
 ## How to?
 1. Grab the precompiled plugin in the releases tab or build it yourself (alternativelly you can download development builds from the actions tab).
@@ -11,6 +14,7 @@ A spigot based plugin dedicated to fixing glitches and exploits that have made i
 6. Click the donkey with chest again, this time without canceling the packet.
 7. Profit?
 8. Spice things up and name the donkey "popbob sex".
+
 
 ## EgirlsNation links
 - [Website](https://egirlsnation.com/)
