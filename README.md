@@ -1,5 +1,6 @@
 # IllegalStack - EgirlsNation edition
 A spigot based plugin dedicated to fixing glitches and exploits that have made it into final Minecraft... But not quite.
+This version reintroduces variation of the dupe that was introduced thanks to this plugin. Also known as SalC1 dupe.
 
 ### Disclaimer for my players
 **This isn't the plugin with which I patch illegal items!**
