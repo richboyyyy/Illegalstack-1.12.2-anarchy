@@ -568,24 +568,7 @@ public class fListener implements Listener {
 				e.getMount().remove();
 			} 
 		}
-
-		if(Protections.DisableRidingExploitableMobs.isEnabled()) {
-			if (IllegalStack.hasChestedAnimals()) 
-			{
-				if((e.getMount() instanceof Mule || e.getMount() instanceof Donkey || e.getMount() instanceof ChestedHorse) || 
-						(IllegalStack.hasTraders() && ( e.getMount() instanceof Llama || e.getMount() instanceof TraderLlama))) 
-				{
-					if(!IllegalStackAction.isCompleted(Protections.DisableRidingExploitableMobs, (Player) e.getEntity(), null, null, e.getMount(),null))
-						return;
-
-					e.setCancelled(true);
-					((Tameable)e.getMount()).eject();
-					((Tameable)e.getMount()).setTamed(false);
-					if(e.getMount() instanceof ChestedHorse)
-						((ChestedHorse)e.getMount()).setCarryingChest(false);
-
-					if(e.getEntity() instanceof Player) 
-						e.getEntity().sendMessage(Msg.PlayerDisabledRidingChestedMsg.getValue());
+		
 
 				}
 			} else {
